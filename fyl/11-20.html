@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<title>FanYongliang</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="css/site.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="#">FanYongliang</a>
+						<div class="nav-collapse">
+							<ul class="nav">
+								<li>
+									<a href="#">Yesterday</a>
+								</li>
+								<li class="active">
+									<a href="#">Today</a>
+								</li>
+								<li>
+									<a href="#">Tomorrow</a>	
+								</li>
+							</ul>
+							<ul class="nav pull-right">
+								<li>
+									<a href="https://fanyongliang.github.io/index.html">Back</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span3">
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header"><i class="icon-user"></i>
+								FanYongliang
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/main.html">&nbsp;&nbsp; Welcome!</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li class="nav-header"><i class="icon-folder-open"></i>
+								Note
+							</li>	
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-07.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-07</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-10.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-10</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-11.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-11</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-12.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-12</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-13.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-13</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-14.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-14</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-17.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-17</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-18.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-18</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-19.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-19</a>
+							</li>
+							<li class="active">
+								<a href="https://fanyongliang.github.io/fyl/11-20.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-20</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-21.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-21</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-24.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-24</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="span9">
+					<div class="hero-unit">
+						<h1><small>2014年11月20日</small></h1>
+					<ol>
+						<li>在主页面遍历显示用户的注册信息并实现分页的功能，添加搜索栏，用户可以通过关键字检索信息
+							<br>源码地址:<a href = "https://github.com/fanyongliang/WebDemo">WebDemo</a>
+						</li>
+						<li><small>version 0.0.4 <pre>
+							<br>·添加JSTL标准标签库C标签
+							<br>	&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%&gt;
+							<br>·在list页面使用c标签的forEach来对找到的数据遍历显示
+							<br>	&lt;c:forEach var="user" items="${users}"&gt;&lt;/c:forEach&gt;
+							<br>·编号user.info_id
+							<br>·姓名user.info_name
+							<br>·性别user.info_gender
+							<br>·电话user.info_phone
+							<br>·邮箱user.info_email
+							<br>	&lt;tr class="row1"&gt;
+							<br>		&lt;td&gt;${user.info_id}&lt;/td&gt;
+							<br>		&lt;td&gt;${user.info_name}&lt;/td&gt;
+							<br>		&lt;td&gt;${user.info_gender}&lt;/td&gt;
+							<br>		&lt;td&gt;${user.info_phone}&lt;/td&gt;
+							<br>		&lt;td&gt;${user.info_email}&lt;/td&gt;
+							<br>	&lt;/tr&gt;
+							<br>·使用c:forEach取代java代码块的for循环
+							</pre></small>
+						</li>
+						<li><small>version 0.0.5 <pre>
+							<br>·	--cn.gyyx.java.beans
+							<br>		--UserInfo.java
+							<br>		--UserLogin.java
+							<br>·	--cn.gyyx.java.bll
+							<br>		--ChangePasswordBLL.java
+							<br>·	--cn.gyyx.java.controller
+							<br>		--HomeController.java
+							<br>		--UserRegisterController.java
+							<br>		--UserLoginController.java
+							<br>·	--cn.gyyx.java.dao
+							<br>		--UserInfoDAO.java
+							<br>·	--cn.gyyx.java.service
+							<br>		--UserInfoService.java
+							<br>·	--cn.gyyx.java.util
+							<br>		--MyBatisConnectionFactory.java
+							<br>·添加注册时用户名验证，用户名重复时会跳转到注册页面，用户名、密码、重复密码的内容会清空，其他信息的内容保留。
+							<br>·注册成功后返回登录页面。
+							<br>·增加实体类UserLogin
+							<br>·增加用户登录验证，对输入的密码+seed进行MD5加密，与数据库中的密码做比较，用户名不存在时会跳转到登录页面，用户名不为空且密码相符会跳转到list页面
+							<br>·list页面增加一栏card内容，显示用户的身份证号码
+							<br>·list页面增加一栏account内容，显示用户的账号信息
+							<br>·修改info_id属性类型为Integer
+							<br>·注册界面添加返回登录界面链接
+							</pre></small>
+						</li>
+						<li><small>version 0.0.6 <pre>
+							<br>·	--cn.gyyx.java.beans
+							<br>		--UserInfo.java
+							<br>		--UserLogin.java
+							<br>·	--cn.gyyx.java.bll
+							<br>		--ChangePasswordBLL.java
+							<br>·	--cn.gyyx.java.controller
+							<br>		--HomeController.java
+							<br>		--UserRegisterController.java
+							<br>		--UserLoginController.java
+							<br>		--UserSearchController.java
+							<br>·	--cn.gyyx.java.dao
+							<br>		--UserInfoDAO.java
+							<br>·	--cn.gyyx.java.service
+							<br>		--UserInfoService.java
+							<br>·	--cn.gyyx.java.util
+							<br>		--MyBatisConnectionFactory.java
+							<br>·添加按条件查找功能	
+							<br>	请输入关键字查询 &lt;input id="key" type="text" class="inputgri" name="search" /&gt;
+							<br>	&lt;input type="button" class="button" value="Go &raquo;" onclick="search()"/&gt;
+							<br>·sqlserver模糊查询
+							<br>	select * from user_info_tb where info_account like CONCAT ('%','${_parameter}','%')
+							</pre></small>
+						</li>
+					</ol>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
