@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<title>FanYongliang</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="css/site.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="#">FanYongliang</a>
+						<div class="nav-collapse">
+							<ul class="nav">
+								<li>
+									<a href="#">Yesterday</a>
+								</li>
+								<li class="active">
+									<a href="#">Today</a>
+								</li>
+								<li>
+									<a href="#">Tomorrow</a>	
+								</li>
+							</ul>
+							<ul class="nav pull-right">
+								<li>
+									<a href="https://fanyongliang.github.io/index.html">Back</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span3">
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header"><i class="icon-user"></i>
+								FanYongliang
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/main.html">&nbsp;&nbsp; Welcome!</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li class="nav-header"><i class="icon-folder-open"></i>
+								Note
+							</li>	
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-07.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-07</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-10.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-10</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-11.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-11</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-12.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-12</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-13.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-13</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-14.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-14</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-17.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-17</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-18.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-18</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-19.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-19</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-20.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-20</a>
+							</li>
+							<li class="active">
+								<a href="https://fanyongliang.github.io/fyl/11-21.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-21</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-24.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-24</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="span9">
+					<div class="hero-unit">
+						<h1><small>2014年11月21日</small></h1>
+					<ol>
+						<li>用户登录成功后在Cookie中保存一个UUID，并用UUID作为key值将返回的user的List集合保存在Memcache中，用户下次登录时会首先查询Cookie，如果查到了，会根据获取的UUID值到Memcache中找value，从而跳过了访问数据库这一步，提高了访问效率
+							<br>源码地址:<a href = "https://github.com/fanyongliang/WebDemo">WebDemo</a>
+						</li>
+						<li><small>version 0.0.7 <pre>
+							<br>·	--cn.gyyx.java.beans
+							<br>		--UserInfo.java
+							<br>		--UserLogin.java
+							<br>		--PageInfo.java
+							<br>·	--cn.gyyx.java.bll
+							<br>		--ChangePasswordBLL.java
+							<br>·	--cn.gyyx.java.controller
+							<br>		--HomeController.java
+							<br>		--UserRegisterController.java
+							<br>		--UserLoginController.java
+							<br>		--UserSearchController.java
+							<br>		--UserPageController.java
+							<br>·	--cn.gyyx.java.dao
+							<br>		--UserInfoDAO.java
+							<br>·	--cn.gyyx.java.service
+							<br>		--UserInfoService.java
+							<br>·	--cn.gyyx.java.util
+							<br>		--MyBatisConnectionFactory.java
+							<br>·新建实体类PageInfo用来设置和获取当页最大显示数和当前页码。
+							<br>·在Mybatis的mapper映射文件中添加分页查找&lt;select&gt;语句
+							<br>	select top 5 * from user_info_tb where info_id not in (select top ((${_parameter}-1)*5) info_id from user_info_tb order by info_id) order by info_id
+							<br>·在dao中定义查找接口public List&lt;UserInfo&gt; selectByPage(int page);
+							<br>·在service方法中实现dao接口中的selectByPage(int page)方法
+							<br>·实现上一页下一页查询（页数小于1是上一页disabled，页数大于总页数时下一页disabled）
+							<br>	&lt;input type="button" id="pre" value="上一页" onclick="prePage()" /&gt;
+							<br>	当前页 ${page}页/${pages}页&nbsp;&nbsp;查到的信息总数&nbsp;${num}条
+							<br>	&lt;input type="button" id="suf" value="下一页" onclick="sufPage()" /&gt;
+							<br>·添加searchLst.jsp页面
+							<br>	--webapp
+							<br>		--WEB-INF
+							<br>			--views
+							<br>				--error.jsp
+							<br>				--home.jsp
+							<br>				--login.jsp
+							<br>				--regist.jsp
+							<br>				--searchLst.jsp
+							<br>				--list.jsp
+							</pre></small>
+						</li>
+						<li><small>version 0.0.8 <pre>
+							<br>·为所有的类和方法添加注释
+							<br>·新建Maven工程logic
+							<br>·将ui中的dao、service、bll、beans、util包放在logic工程中
+							<br>·复制logic工程的配置信息加入ui工程的pom.xml配置文件中，完成logic工程和ui工程的关联
+							</pre></small>
+						</li>
+						<li><small>version 0.0.9 <pre>
+							<br>·完成UUID的Junit测试，添加测试类UUIDTest.java
+							<br>·完成Cookie的Junit测试，添加测试类CookieTest.java
+							<br>·完成Memcache的Junit测试，添加测试类MemcacheTest.java
+							<br>·加入Cookie，在用户登录验证通过后，创建Cookie，保存一个随机字符串UUID到Cookie中
+							<br>·加入Memcache
+							<br>	MemcachedClientBuilder builder = new XMemcachedClientBuilder("127.0.0.1:11211");
+							<br>	MemcachedClient client = builder.build();
+							<br>	client.set(uuid, 0, users);
+							<br>	在用户访问主页是会拿Cookie的UUID和client.get(cookie.getValue())比较，相同会返回user，用户进入主页，不相同的话会跳转到登录页面
+							</pre></small>
+						</li>
+					</ol>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
