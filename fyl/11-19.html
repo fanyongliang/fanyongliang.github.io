@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<title>FanYongliang</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="css/site.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="#">FanYongliang</a>
+						<div class="nav-collapse">
+							<ul class="nav">
+								<li>
+									<a href="#">Yesterday</a>
+								</li>
+								<li class="active">
+									<a href="#">Today</a>
+								</li>
+								<li>
+									<a href="#">Tomorrow</a>	
+								</li>
+							</ul>
+							<ul class="nav pull-right">
+								<li>
+									<a href="https://fanyongliang.github.io/index.html">Back</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span3">
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header"><i class="icon-user"></i>
+								FanYongliang
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/main.html">&nbsp;&nbsp; Welcome!</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li class="nav-header"><i class="icon-folder-open"></i>
+								Note
+							</li>	
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-07.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-07</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-10.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-10</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-11.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-11</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-12.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-12</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-13.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-13</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-14.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-14</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-17.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-17</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-18.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-18</a>
+							</li>
+							<li class="active">
+								<a href="https://fanyongliang.github.io/fyl/11-19.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-19</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-20.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-20</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-21.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-21</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-24.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-24</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="span9">
+					<div class="hero-unit">
+						<h1><small>2014年11月19日</small></h1>
+					<ol>
+						<li>使用JSP、JavaScript做一个用户登录注册页面并添加JS验证
+							<br>源码地址:<a href = "https://github.com/fanyongliang/WebDemo">WebDemo</a>
+						</li>
+						<li><small>version 0.0.1 <pre>
+							<br>·创建SpringMVC项目
+							<br>·	--cn.gyyx.java.beans
+							<br>		--IUserInfo.java
+							<br>		--IUserLogin.java
+							<br>		--UserInfo.java
+							<br>		--UserLogin.java
+							<br>·	--cn.gyyx.java.controller
+							<br>		--HomeController.java
+							<br>		--UserRegisterController.java
+							<br>·	--cn.gyyx.java.dao
+							<br>		--MyBatisConnectionFactory.java
+							<br>		--UserInfoDAO.java
+							<br>·在resources资源目录下
+							<br>	--mybatis
+							<br>		--Config.xml
+							<br>		--UserInfoMapper.xml
+							<br>		--UserLoginMapper.xml
+							<br>	--db.properties
+							<br>·测试Mybatis数据库连接
+							<br>	--MybatisConnectTest.java
+							<br>·添加jsp页面
+							<br>	--webapp
+							<br>		--WEB-INF
+							<br>			--views
+							<br>				--error.jsp
+							<br>				--login.jsp
+							<br>				--home.jsp
+							<br>				--regist.jsp
+							</pre></small>
+						</li>
+						<li><small>version 0.0.2 <pre>
+							<br>·加入login的js验证
+							<br>	--用户名不能为空
+							<br>		--用户名的长度在3-20位之间
+							<br>	--密码不能为空
+							<br>		--密码的长度必须在6-20位之间
+							<br>·加入regist的js验证
+							<br>	--用户名不能为空
+							<br>		--用户名的长度在3-20位之间
+							<br>	--密码不能为空
+							<br>		--密码的长度必须在6-20位之间
+							<br>	--重复密码不能为空
+							<br>		--重复密码必须和密码相同
+							</pre></small>
+						</li>
+						<li><small>version 0.0.3 <pre>
+							<br>·	--cn.gyyx.java.beans
+							<br>		--UserInfo.java
+							<br>·	--cn.gyyx.java.bll
+							<br>		--ChangePasswordService.java
+							<br>·	--cn.gyyx.java.controller
+							<br>		--HomeController.java
+							<br>		--UserRegisterController.java
+							<br>·	--cn.gyyx.java.dao
+							<br>		--UserInfoDAO.java
+							<br>·	--cn.gyyx.java.service
+							<br>		--UserInfoService.java
+							<br>·	--cn.gyyx.java.util
+							<br>·		--MyBatisConnectionFactory.java
+							<br>·删除Mybatis的Mapper映射文件UserLoginMapper.xml
+							<br>·修改实体类UserInfo.java
+							<br>	--private int info_id;
+							<br>	--private String info_account;
+							<br>	--private String info_password;
+							<br>	--private String info_name;
+							<br>	--private String info_gender;
+							<br>	--private String info_card;
+							<br>	--private String info_phone;
+							<br>	--private String info_email;
+							<br>	--private String info_question;
+							<br>	--private String info_answer;
+							<br>·修改注册页面信息，注册信息内容增加，并添加相应的js验证
+							</pre></small>
+						</li>
+					</ol>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
