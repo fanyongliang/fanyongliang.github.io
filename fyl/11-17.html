@@ -105,29 +105,27 @@
 						<li>架构图<br>
 							<img src="img/java.png" alt="" />
 						</li>
-						<li>UI层<br>
-							主要包含控制器类文件以Controllers结尾，页面文件。Ui层可以调用service和bll的方法。其它层均不可越级调用。
+						<li>UI层
+							<br>主要包含控制器类文件以Controllers结尾，页面文件。Ui层可以调用service和bll的方法。其它层均不可越级调用。<br>
 							<img src="img/ui.png" alt="" />
 						</li>
-						<li>Service层<br>
-							主要包含业务拼装类，并以Service结尾。所有引用第三方网络组件的要放在静态类中以Agent结尾，方法体中包含网络请求、错误处理、日志、对象转换。该静态类下的方法只有此层可以调用，其它层均不可调用。<br>
-							a)调用网络组件代理类
+						<li>Service层
+							<br>主要包含业务拼装类，并以Service结尾。所有引用第三方网络组件的要放在静态类中以Agent结尾，方法体中包含网络请求、错误处理、日志、对象转换。该静态类下的方法只有此层可以调用，其它层均不可调用。<br>
+							a)调用网络组件代理类<br>
 							<img src="img/service1.png" alt="" />
-							<br>
-							<br>
-							b)普通Service层类
+							b)普通Service层类<br>
 							<img src="img/service2.png" alt="" />
 						</li>
-						<li>BLL层<br>
-							主要用来做业务逻辑的实现，类以BLL结尾。
+						<li>BLL层
+							<br>主要用来做业务逻辑的实现，类以BLL结尾。<br>
 							<img src="img/bll.png" alt="" />
 						</li>
-						<li>DAO层<br>
-							数据库访问静态方法，类以DAO结尾。
+						<li>DAO层
+							<br>数据库访问静态方法，类以DAO结尾。<br>
 							<img src="img/dao.png" alt="" />
 						</li>
-						<li>benans层<br>
-							实体类，类以benan结尾。
+						<li>benans层
+							<br>实体类，类以benan结尾。<br>
 							<img src="img/beans.png" alt="" />
 						</li>
 						<li>Java项目中所有UI层为一独立项目，beans,bll,service,dao四层在一个项目中，所有项目在同一个工作区下。所有组件引用需要通过Maven进行引用。
