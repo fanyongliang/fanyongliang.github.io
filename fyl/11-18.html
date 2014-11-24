@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<title>FanYongliang</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="css/site.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="#">FanYongliang</a>
+						<div class="nav-collapse">
+							<ul class="nav">
+								<li>
+									<a href="#">Yesterday</a>
+								</li>
+								<li class="active">
+									<a href="#">Today</a>
+								</li>
+								<li>
+									<a href="#">Tomorrow</a>	
+								</li>
+							</ul>
+							<ul class="nav pull-right">
+								<li>
+									<a href="https://fanyongliang.github.io/index.html">Back</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span3">
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header"><i class="icon-user"></i>
+								FanYongliang
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/main.html">&nbsp;&nbsp; Welcome!</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li class="nav-header"><i class="icon-folder-open"></i>
+								Note
+							</li>	
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-07.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-07</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-10.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-10</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-11.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-11</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-12.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-12</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-13.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-13</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-14.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-14</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-17.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-17</a>
+							</li>
+							<li class="active">
+								<a href="https://fanyongliang.github.io/fyl/11-18.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-18</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-19.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-19</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-20.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-20</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-21.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-21</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-24.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-24</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="span9">
+					<div class="hero-unit">
+						<h1><small>2014年11月18日</small></h1>
+					<ol>
+						<li>Spring MVC注解开发
+							<br>·在springMVC配置文件中设置组件扫描为整个工程
+							<br>·@Controller 标示当前类是控制器一个具体的实现
+							<br>·@RequestMapping 在方法上指定该方法的访问路径，放在类上命名空间要组合指定的路径
+						</li>
+						<li>Spring MVC注解接收参数
+							<br>·使用HttpServletRequest可以直接定义在参数的列表<br>
+							<pre>	@RequestMapping("/test1")<br>	public String test1(HttpServletRequest request) {<br>		String name = request.getParameter("name");<br>		logger.info("test1 name:" + name);<br>		return "home";<br>	}</pre>
+							·在参数列表上直接定义要接收的参数名称，只要参数名称能匹配上的就能接收传过来的数据<br>
+							<pre>	@RequestMapping("/test2")<br>	public String test2(String name, Date birthDate) {<br>		logger.info("test2 birthDate:" + birthDate);<br>		return "home";<br>	}</pre>
+							·通过自定义实体对象接收参数<br>
+							<pre>	@RequestMapping("/test3")<br>	public String test3(UserBean user) {<br>		logger.info(user.toString());<br>		return "home";<br>	}</pre>
+							·接收数组<br>
+							<pre>	@RequestMapping("/test4")<br>	public String test4(String[] name) {<br>		for (String n : name) {<br>			logger.info(n);<br>		}<br>		return "home";<br>	}</pre>
+						</li>
+						<li>Spring MVC向页面绑定数据
+							<br>·返回ModelAndView对象<br>
+							<pre>	@RequestMapping("/test6")<br>	public ModelAndView test6() {<br>		UserBean user = new UserBean();<br>		user.setAge(17);<br>		Map<String, Object> map = new HashMap<String, Object>();<br>		map.put("u", user);<br>		return new ModelAndView("home", map);<br>	}</pre>
+							·通过Map参数<br>
+							<pre>	@RequestMapping("/test7")<br>	public String test7(Map<String, Object> map) {<br>		UserBean user = new UserBean();<br>		user.setAge(17);<br>		map.put("u", user);<br>		return "home";<br>	}</pre>
+							·通过Model参数<br>
+							<pre>	@RequestMapping("/test8")<br>	public String test8(Model model){<br>		UserBean user = new UserBean();<br>		user.setAge(17);<br>		model.addAttribute("u",user);<br>		return "home";<br>	}</pre>
+						</li>
+						<li>Spring MVC页面跳转
+							<br>·跳绝对URL<br>
+							<pre>	@RequestMapping("/test9")<br>	public String test9(){<br>		return "redirect:http://www.gyyx.cn";<br>	}</pre>
+							·跳Controller内方法<br>
+							<pre>@RequestMapping("/test10")<br>	public String test9(){<br>		return "redirect:test2";<br>	}</pre>
+							·跳其他Controller内方法<br>
+							<pre>	@RequestMapping("/test11")<br>	public String test9(){<br>		return "redirect:Controller/test2";<br>	}</pre>
+						</li>
+						<li>
+							<br>
+						</li>
+					</ol>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
