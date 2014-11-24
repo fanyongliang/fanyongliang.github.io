@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<title>FanYongliang</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="css/site.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="#">FanYongliang</a>
+						<div class="nav-collapse">
+							<ul class="nav">
+								<li>
+									<a href="#">Yesterday</a>
+								</li>
+								<li class="active">
+									<a href="#">Today</a>
+								</li>
+								<li>
+									<a href="#">Tomorrow</a>
+								</li>
+							</ul>
+							<ul class="nav pull-right">
+								<li>
+									<a href="https://fanyongliang.github.io/index.html">Back</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span3">
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header"><i class="icon-user"></i>
+								FanYongliang
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/main.html">&nbsp;&nbsp; Welcome!</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li class="nav-header"><i class="icon-folder-open"></i>
+								Note
+							</li>	
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-07.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-07</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-10.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-10</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-11.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-11</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-12.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-12</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-13.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-13</a>
+							</li>
+							<li class="active">
+								<a href="https://fanyongliang.github.io/fyl/11-14.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-14</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-17.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-17</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-18.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-18</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-19.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-19</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-20.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-20</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-21.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-21</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-24.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-24</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="span9">
+					<div class="hero-unit">
+						<h1><small>2014年11月14日</small></h1>
+					<ol>
+						<li>Mybatis配置文件问题:
+							<br>Mybatis的配置文件中，配置数据库参数<environment>标签中存在一个id用来表示当前的数据库,如果数据库有多个<environment>标签也可以随着数据库增加，在<environments>标签有一个default属性表示默认使用哪个数据库参数，给定一个<environment>标签的id值就行。
+							<br><pre>&lt;?xml version="1.0" encoding="UTF-8"?><br>&lt;!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd"><br>&lt;configuration><br>	&lt;environments default="account"><br>		&lt;environment id="account"><br>			...<br>		&lt;/environment><br>	&lt;/environments><br>	&lt;mappers><br>		...<br>	&lt;/mappers><br>&lt;/configuration></pre>
+							<br>在SqlSessionFactory的生成类中，调用SqlSessionFactoryBuilder()的build方法生成session工厂，在build方法中有两个参数，第一个指定Mybatis的配置文件Config.xml的路径，另一个为Mybatis的配置文件中数据库参数的id值，可以再这里指定一个要使用的数据库参数。
+						</li>
+						<li>使用MD5对字符串进行加密:
+							<br>添加POM中的JAR包
+							<pre>		&lt;dependency><br>  			&lt;groupId>cn.gyyx.core&lt;/groupId><br>  			<artifactId>utility</artifactId><br>  			&lt;version>0.1&lt;/version><br>		&lt;/dependency></pre>
+							<br>使用MD5.encode(String md);方法可以将字符串md进行MD5加密。
+						</li>
+						<li>密码加密:<br>
+							<pre>String newPassword = MD5.encode(MD5.encode(oldPassword)+seed);</pre>
+						</li>
+						<li>SQL Server的登录问题:
+							<br>由于需要用到Mybatis连接数据库，在Mybatis配置文件Config.xml中需要配置连接数据库的username和password，所以不能使用Windows身份验证登录数据库，需要新建一个登录名，强制使用密码，并为该登录名授予连接数据库和登录权限，在Windows身份验证连接的服务器的属性中，设置SQL Server和Windows身份验证模式，接着重复数据库服务，就可以使用登录名正常登录了。
+						</li>
+						<li>什么是Velocity:
+							<br>Velocity是一个基于java的模板引擎（template engine）。它允许任何人仅仅简单的使用模板语言（template language）来引用由java代码定义的对象。 当Velocity应用于web开发时，界面设计人员可以和java程序开发人员同步开发一个遵循MVC架构的web站点，也就是说，页面设计人员可以只关注页面的显示效果，而由java程序开发人员关注业务逻辑编码。
+						</li>
+					</ol>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
