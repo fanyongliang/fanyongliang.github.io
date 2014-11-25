@@ -23,7 +23,7 @@
 									<a href="#">Today</a>
 								</li>
 								<li>
-									<a href="#">Tomorrow</a>
+									<a href="#">Tomorrow</a>	
 								</li>
 							</ul>
 							<ul class="nav pull-right">
@@ -39,7 +39,7 @@
 				<div class="span3">
 					<div class="well" style="padding: 8px 0;">
 						<ul class="nav nav-list">
-								<li class="nav-header"><i class="icon-user"></i>
+							<li class="nav-header"><i class="icon-user"></i>
 								FanYongliang
 							</li>
 							<li>
@@ -61,7 +61,7 @@
 							<li>
 								<a href="https://fanyongliang.github.io/fyl/11-11.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-11</a>
 							</li>
-							<li class="active">
+							<li>
 								<a href="https://fanyongliang.github.io/fyl/11-12.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-12</a>
 							</li>
 							<li>
@@ -92,7 +92,7 @@
 							<li>
 								<a href="https://fanyongliang.github.io/fyl/11-24.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-24</a>
 							</li>
-							<li>
+							<li class="active">
 								<a href="https://fanyongliang.github.io/fyl/11-25.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-25</a>
 							</li>
 						</ul>
@@ -100,44 +100,31 @@
 				</div>
 				<div class="span9">
 					<div class="hero-unit">
-						<h1><small>2014年11月12日</small></h1>
+						<h1><small>2014年11月25日</small></h1>
 					<ol>
-						<li>Memcache了解:
-							<br>Memcache是高效的、快速的分布式内存对象缓存系统，主要用于加速WEB动态应用程序。memcache是一个服务器端软件，它也有自己的端口，用于维护一个存在于内存中的hash表。<br>由于Memcache作用于非持久化层，所以机器重启后数据将会清空，所以一般都会保存一些非重要信息。
+						<li>项目配置Velocity并更新jsp文件为vm文件
+							<br>源码地址:<a href = "https://github.com/fanyongliang/WebDemo">WebDemo</a>
 						</li>
-						<li>Memcache的使用:
-							<br>使用Memcache的网站一般流量都是比较大的，为了缓解数据库的压力，让Memcache作为一个缓存区域，把部分信息保存在内存中，在前端能够迅速的进行存取。
+						<li>在pom.xml文件内增加Velocity
+							<br><pre>	&lt;!-- velocity --&gt;<br>	&lt;dependency&gt;<br>  		&lt;groupId&gt;org.apache.velocity&lt;/groupId&gt;<br>  		&lt;artifactId&gt;velocity&lt;/artifactId&gt;<br>  		&lt;version&gt;1.7&lt;/version&gt;<br>	&lt;/dependency&gt;<br>	 &lt;!-- velocity-tools --&gt;<br>	&lt;dependency&gt;<br>  		&lt;groupId&gt;org.apache.velocity&lt;/groupId&gt;<br>  		&lt;artifactId&gt;velocity-tools&lt;/artifactId&gt;<br>  		&lt;version&gt;2.0&lt;/version&gt;<br>	&lt;/dependency&gt;</pre>
 						</li>
-						<li>Memcached特征:
-							<br>1).协议简单<br>2).基于libevent事件处理<br>3).内置的内存管理方式<br>4).分布式
+						<li>修改servlet-context.xml配置文件
+							<br><pre>注释掉&lt;!--  &lt;beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"&gt;<br>		&lt;beans:property name="prefix" value="/WEB-INF/views/" /&gt;<br>		&lt;beans:property name="suffix" value=".jsp" /&gt;<br>	&lt;/beans:bean&gt;--&gt;</pre>
 						</li>
-						<li>程序代码分析:
-							<br>初始化一个Memcache的对象
-							<pre>$mem = new Memcache;</pre>
-							<br>连接到Memcache服务器端
-							<pre>$mem->connect("192.168.0.200", 12000);</pre>
-							<br>保存一个数据到Memcache服务器上
-							<pre>$mem->set('key1', 'This is first value', 0, 60);</pre>
-							<br>从Memcache服务器端获取一条数据
-							<pre>$val = $mem->get('key1');<br>echo "Get key1 value: " . $val;</pre>
-							<br>使用replace方法来替换掉上面key1的值
-							<pre>$mem->replace('key1', 'This is replace value', 0, 60);<br>$val = $mem->get('key1');<br>echo "Get key1 value: " . $val;</pre>
-							<br>Memcache保存数组
-							<pre>$arr = array('aaa', 'bbb', 'ccc', 'ddd');<br>$mem->set('key2', $arr, 0, 60);<br>$val2 = $mem->get('key2');<br>print_r($val2);</pre>
-							<br>删除一个数据
-							<pre>$mem->delete('key1');<br>$val = $mem->get('key1');<br>echo "Get key1 value: " . $val . "<br>";</pre>
-							<br>清除保存在Memcache服务器上的数据
-							<pre>$mem->flush();<br>$val2 = $mem->get('key2');<br>echo "Get key2 value: ";<br>print_r($val2);<br>echo "<br>";</pre>
+						<li>添加velocityConfig与velocityViewResolver节点
+							<br><pre>&lt;beans:bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer"&gt;<br>	&lt;beans:property name="resourceLoaderPath" value="/WEB-INF/views" /&gt;<br>	&lt;beans:property name="configLocation" value="classpath:velocity.properties" /&gt;<br>&lt;/beans:bean&gt;<br>&lt;beans:bean id="velocityViewResolver"  class="org.springframework.web.servlet.view.velocity.VelocityViewResolver"&gt;<br>	&lt;beans:property name="suffix" value=".vm" /><br>	&lt;beans:property name="contentType" value="text/html;charset=UTF-8" /&gt;<br>&lt;/beans:bean&gt;</pre>
 						</li>
-						<li>使用PD工具绘制时序图:
-							<br>用户登录验证
-							<img src="img/SequenceDiagram.png" alt="" />
+						<li>资源文件根目录下增加velocity.properties
+							<br><pre>#encoding<br>input.encoding=UTF-8<br>output.encoding=UTF-8<br>contentType=text/html;charset=UTF-8<br>	<br>#autoreload when vm changed<br>file.resource.loader.cache=false<br>file.resource.loader.modificationCheckInterval=1<br>velocimacro.library.autoreload=false</pre>
+						</li>
+						<li>在View文件夹里创建home.vm文件 ,让eclipse支持velocity语法高亮
+							<br>Help->Install New Software...在URL内直接添加veloeclipse插件本地镜像 `http://192.168.6.195/veloeclipse/` 回车 安装veloeclipse插件
 						</li>
 					</ol>	
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> 
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 	</body>
