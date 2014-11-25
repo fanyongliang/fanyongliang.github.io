@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<title>FanYongliang</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="css/site.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="#">FanYongliang</a>
+						<div class="nav-collapse">
+							<ul class="nav">
+								<li>
+									<a href="#">Yesterday</a>
+								</li>
+								<li class="active">
+									<a href="#">Today</a>
+								</li>
+								<li>
+									<a href="#">Tomorrow</a>	
+								</li>
+							</ul>
+							<ul class="nav pull-right">
+								<li>
+									<a href="https://fanyongliang.github.io/index.html">Back</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span3">
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header"><i class="icon-user"></i>
+								FanYongliang
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/main.html">&nbsp;&nbsp; Welcome!</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li class="nav-header"><i class="icon-folder-open"></i>
+								Note
+							</li>	
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-07.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-07</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-10.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-10</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-11.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-11</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-12.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-12</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-13.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-13</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-14.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-14</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-17.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-17</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-18.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-18</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-19.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-19</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-20.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-20</a>
+							</li>
+							<li>
+								<a href="https://fanyongliang.github.io/fyl/11-21.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-21</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li class="active">
+								<a href="https://fanyongliang.github.io/fyl/11-24.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-24</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="span9">
+					<div class="hero-unit">
+						<h1><small>2014年11月24日</small></h1>
+					<ol>
+						<li>学习Velocity语法，解决中文乱码问题，进行测试
+							<br>源码地址:<a href = "https://github.com/fanyongliang/WebDemo">WebDemo</a>
+						</li>
+						<li>了解Velocity
+							<br>Velocity是一个基于java的模板引擎（template engine）。它允许任何人仅仅简单的使用模板语言（template language）来引用由java代码定义的对象。 当Velocity应用于web开发时，界面设计人员可以和java程序开发人员同步开发一个遵循MVC架构的web站点，也就是说，页面设计人员可以只 关注页面的显示效果，而由java程序开发人员关注业务逻辑编码。Velocity将java代码从web页面中分离出来，这样为web站点的长期维护提 供了便利，同时也为我们在JSP和PHP之外又提供了一种可选的方案。
+						</li>
+						<li>Velocity语法--->变量
+							<br>·变量的定义
+							<pre>#set($name = "hello")</pre>
+							·输出变量值
+							<pre>${name}</pre>
+							·变量引用赋值
+							<pre>#set($monkey = $bill)</pre>
+							·字面字符串赋值
+							<pre>#set($monkey.Friend = "monica")</pre>
+							·属性引用赋值
+							<pre>#set($monkey.Blame = $whitehouse.Leak) </pre>
+							·方法引用赋值
+							<pre>#set($monkey.Plan = $spindoctor.weave($web))</pre>
+							·字面数字赋值
+							<pre>#set($monkey.Number = 123)</pre>
+							·数组列表赋值
+							<pre>#set($monkey.Say = ["Not", $my, "fault"])</pre>
+							Tips:$foo.Name将被解释为Foo对象的getName（）方法，而不是Foo对象的Name实例变量
+						</li>
+						<li>Velocity语法--->循环
+							<br>·每次循环$list中的一个值都会赋给$element变量
+							<pre>#foreach ($element in $list)<br>	This is $element.<br>	$velocityCount<br>#end</pre>
+							Tips:Velocity还特别提供了得到循环次数的方法，$velocityCount变量的名字是Velocity默认的名字
+						</li>
+						<li>Velocity语法--->条件语句
+							<br><pre>#if (condition)<br>	...<br>#elseif (condition)<br>	...<br>#else<br>	...<br>#end</pre>>
+						</li>
+						<li>Velocity语法--->嵌套语句
+							<br><pre>#foreach ($element in $list)<br>#foreach ($element in $list)<br>	This is $element. $velocityCount<br>#end<br>	This is $element.<br>	$velocityCount<br>#end</pre>
+							Tips:语句中也可以嵌套其他的语句，如#if…#else…#end等
+						</li>
+						<li>Velocity语法--->注释
+							<br>·单行注释
+							<pre>## ...</pre>
+							·多行注释
+							<pre>#*<br>	...<br>*#</pre>
+							·文档注释
+							<pre>#**<br>	...<br>*#</pre>
+						</li>
+						<li>Velocity语法--->关系运算符
+							<br><pre>#if($foo && $bar)<br>This and that<br>#end</pre>
+							Tips:Velocity 也具有逻辑AND, OR 和 NOT 操作符
+						</li>
+						<li>Velocity语法--->宏
+							<br>·宏的定义
+							<pre>#macro(宏的名称 $参数1 $参数2 …)<br>	语句体(即函数体)<br>#end</pre>
+							·宏的调用
+							<pre>#宏的名称($参数1 $参数2 …)</pre>
+						</li>
+					</ol>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
